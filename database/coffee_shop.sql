@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost:3306
--- Generation Time: Feb 02, 2021 at 04:18 AM
+-- Generation Time: Feb 02, 2021 at 03:13 PM
 -- Server version: 8.0.22-0ubuntu0.20.04.3
 -- PHP Version: 7.4.3
 
@@ -43,8 +43,9 @@ CREATE TABLE `orders` (
 --
 
 INSERT INTO `orders` (`orderID`, `userID`, `seatNumber`, `timeOrder`, `paymentMethod`, `total`, `status`) VALUES
-('PMSN-001', 1, '02', '2021-02-01 12:20:37', 'Cashier', 60000, 'WAS PAID'),
-('PMSN-002', 1, NULL, '2021-02-01 17:53:08', NULL, NULL, 'WAITING FOR PAYMENT');
+('PMSN-001', 1, '02', '2021-02-02 06:02:38', 'OVO', 18000, 'WAS PAID'),
+('PMSN-002', 1, '01', '2021-02-02 06:03:10', 'OVO', 6000, 'WAS PAID'),
+('PMSN-003', 3, '02', '2021-02-02 07:21:18', 'OVO', 42000, 'WAS PAID');
 
 -- --------------------------------------------------------
 
@@ -64,9 +65,9 @@ CREATE TABLE `order_details` (
 --
 
 INSERT INTO `order_details` (`#`, `orderID`, `productID`, `quantity`) VALUES
-(28, 'PMSN-001', 9, 10),
-(32, 'PMSN-002', 9, 2),
-(34, 'PMSN-002', 10, 2);
+(1, 'PMSN-001', 9, 3),
+(2, 'PMSN-002', 10, 1),
+(3, 'PMSN-003', 10, 7);
 
 -- --------------------------------------------------------
 
@@ -86,9 +87,9 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`productID`, `productName`, `price`, `stock`) VALUES
-(9, 'Sukop', 6000, 48),
-(10, 'Kopasus', 6000, 11),
-(12, 'Yetta Parsons', 10000, 46);
+(9, 'Sukop', 6000, 6),
+(10, 'Kopasus', 6000, 2),
+(12, 'Yetta Parsons', 10000, 993);
 
 -- --------------------------------------------------------
 
@@ -130,7 +131,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`userID`, `fullName`, `nickName`, `email`, `password`, `phoneNumber`, `roleID`) VALUES
-(1, 'Admin', 'Admin', 'maulanaakurniaa@yahoo.com', '0192023a7bbd73250516f069df18b500', '000000000000', 1);
+(1, 'Admin', 'Admin', 'admin@localhost.com', '202cb962ac59075b964b07152d234b70', '000000000000', 1),
+(3, 'ini User', 'User', 'user@localhost.com', '202cb962ac59075b964b07152d234b70', '000000000', 2);
 
 --
 -- Indexes for dumped tables
@@ -178,7 +180,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `order_details`
 --
 ALTER TABLE `order_details`
-  MODIFY `#` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `#` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT for table `products`
@@ -190,7 +192,7 @@ ALTER TABLE `products`
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `userID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `userID` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Constraints for dumped tables
