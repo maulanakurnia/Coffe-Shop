@@ -1,7 +1,7 @@
 <?php
     $title = "Detail Order";
-    include("layouts/head.php");
-    include("layouts/header.php");
+    include("../layouts/head.php");
+    include("../layouts/header.php");
     $orderID    = $_GET['orderID'];
     $data       = fetchData("SELECT * FROM order_details a 
                             INNER JOIN orders b
@@ -28,9 +28,9 @@
         <div class="row">
             <aside class="col-md-3">
                 <ul class="list-group">
-                    <a class="list-group-item" href="profile.php">Profile</a>
-                    <a class="list-group-item" href="changeProfile.php">Change Profile</a>
-                    <a class="list-group-item active" href="orderHistory.php">Order History</a>
+                    <a class="list-group-item" href="<?= $CLIENT_URL ?>profile/index.php">Profile</a>
+                    <a class="list-group-item" href="<?= $CLIENT_URL ?>profile/changeProfile.php">Change Profile</a>
+                    <a class="list-group-item active" href="<?= $CLIENT_URL ?>profile/orderHistory.php">Order History</a>
                 </ul>
             </aside>
             <main class="col-md-9">
@@ -95,5 +95,5 @@
 </section>
 
 <?php
-    include("layouts/foot.php");
+    include("../layouts/foot.php");
 ?>

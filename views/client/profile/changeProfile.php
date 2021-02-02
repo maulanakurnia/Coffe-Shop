@@ -1,7 +1,7 @@
 <?php
     $title = "Change Profile";
-    include("layouts/head.php");
-    include("layouts/header.php");
+    include("../layouts/head.php");
+    include("../layouts/header.php");
     $userID = $_SESSION['userID'];
     $user = fetchData("SELECT * FROM user WHERE userID = '$userID'");
 ?>
@@ -16,9 +16,9 @@
         <div class="row">
             <aside class="col-md-3">
                 <ul class="list-group">
-                    <a class="list-group-item" href="profile.php">Profile</a>
-                    <a class="list-group-item active" href="changeProfile.php">Change Profile</a>
-                    <a class="list-group-item" href="orderHistory.php">History Payment</a>
+                    <a class="list-group-item" href="<?= $CLIENT_URL ?>profile/index.php">Profile</a>
+                    <a class="list-group-item active" href="<?= $CLIENT_URL ?>profile/changeProfile.php">Change Profile</a>
+                    <a class="list-group-item" href="<?= $CLIENT_URL ?>profile/orderHistory.php">History Payment</a>
                 </ul>
             </aside>
             <main class="col-md-9">
@@ -26,7 +26,7 @@
                     <div class="card-header">
                         <h4>Change Profile</h4>
                     </div>
-                    <form action="actions/auth/editProfile.php" method="post">
+                    <form action="../actions/auth/editProfile.php" method="post">
                     <div class="card-body">
                         <div class="row">
                             <div class="col-3">
@@ -112,5 +112,5 @@
 </section>
 
 <?php
-    include("layouts/foot.php");
+    include("../layouts/foot.php");
 ?>

@@ -1,7 +1,7 @@
 <?php
     $title = "Home";
-    include("layouts/head.php");
-    include("layouts/header.php");
+    include("../layouts/head.php");
+    include("../layouts/header.php");
     $userID = $_SESSION['userID'];
     $user = fetchData("SELECT * FROM user WHERE userID = '$userID'");
 ?>
@@ -16,9 +16,9 @@
         <div class="row">
             <aside class="col-md-3">
                 <ul class="list-group">
-                    <a class="list-group-item active" href="profile.php">Profile</a>
-                    <a class="list-group-item" href="changeProfile.php">Change Profile</a>
-                    <a class="list-group-item" href="orderHistory.php">Order History</a>
+                    <a class="list-group-item active" href="<?= $CLIENT_URL ?>profile/index.php">Profile</a>
+                    <a class="list-group-item" href="<?= $CLIENT_URL ?>profile/changeProfile.php">Change Profile</a>
+                    <a class="list-group-item" href="<?= $CLIENT_URL ?>profile/orderHistory.php">Order History</a>
                 </ul>
             </aside>
             <main class="col-md-9">
@@ -75,5 +75,5 @@
 </section>
 
 <?php
-    include("layouts/foot.php");
+    include("../layouts/foot.php");
 ?>

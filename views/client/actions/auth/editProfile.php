@@ -25,11 +25,11 @@ if(empty($password) || empty($newPassword)){
                                     email           = '$email',         -- EMAIL
                                     phoneNumber     = '$phoneNumber'    -- PHONE NUMBER
                                 WHERE userID='$userID'");
-    if($update) { header("location: ../../profile.php?msg=SUCCESS"); }
-    else { header("location:../../profile.php?msg=FAILED"); }
+    if($update) { header("location: ../../profile/index.php?msg=SUCCESS"); }
+    else { header("location:../../profile/index.php?msg=FAILED"); }
 } else { 
-    if ($hash != $passwordValidate){ header("location: ../../changeProfile.php?msg=WRONGPASSWORD"); } 
-    else if($newPassword != $cNewPassword){ header("location: ../../changeProfile.php?msg=PASSWORDNOTMATCH"); }
+    if ($hash != $passwordValidate){ header("location: ../../profile/changeProfile.php?msg=WRONGPASSWORD"); } 
+    else if($newPassword != $cNewPassword){ header("location: ../../profile/changeProfile.php?msg=PASSWORDNOTMATCH"); }
     else { 
         $update         = dbQuery("UPDATE user 
                                         SET fullName        = '$fullName',      -- FULL NAME 
@@ -38,8 +38,8 @@ if(empty($password) || empty($newPassword)){
                                             phoneNumber     = '$phoneNumber',   -- PHONE NUMBER
                                             password        = '$newHash'        -- NEW PASSWORD
                                         WHERE userID='$userID'");
-        if($insert){header("location:../../profile.php?msg=SUCCESS"); }
-            else{ header("location:../../profile.php?msg=FAILED"); }
+        if($insert){header("location:../../profile/index.php?msg=SUCCESS"); }
+            else{ header("location:../../profile/index.php?msg=FAILED"); }
           
     }
 }
