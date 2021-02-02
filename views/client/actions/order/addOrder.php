@@ -7,11 +7,7 @@ $userID     = $_SESSION['userID'];
 
 if($_SESSION['orderID'] == NULL){
     $orders     = fetchDataObject("SELECT max(orderID) as orderID FROM orders");
-    if(count($orders) <= 1) {
-        $noUrut     = (int) substr("PMSN-001", 5);
-    }else{
-        $noUrut     = (int) substr($orders->orderID, 5);
-    }
+    $noUrut     = (int) substr($orders[0]->orderID, 5);
     $noUrut++;
     $char       = "PMSN-";
     $orderID    = $char . sprintf("%03s", $noUrut);

@@ -54,7 +54,7 @@
                     <a href="<?= $BASE_URL ?>" class="nav-link text-dark" target="_blank"><i class="fas fa-globe-europe"></i> Lihat Website</a>
                 </li>
                 <li class="nav-item d-none d-sm-inline-block">
-                    <a href="../../view/aksi/keluar.php" class="nav-link text-danger keluar" title="Keluar" onclick="return confirm('Anda Yakin Ingin Keluar?')"><i class="fas fa-power-off"></i></a>
+                    <a href="<?=$adm?>actions/signOut.php" class="nav-link text-danger keluar" title="Keluar" onclick="return confirm('Anda Yakin Ingin Keluar?')"><i class="fas fa-power-off"></i></a>
                 </li>
             </ul>
         </nav>

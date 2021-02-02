@@ -33,21 +33,21 @@
                         <form method="POST" action="../actions/user/change.php"> 
                             <div class="card-body">     
                                 <div class="form-group">
-                                    <label>Nama Lengkap</label>
-                                    <input type="text" value="<?= $user[0]['fullName'] ?>" class="form-control" placeholder="Masukkan nama lengkap anda" name="fullName">
+                                    <label>Full Name</label>
+                                    <input type="text" value="<?= $user[0]['fullName'] ?>" class="form-control" placeholder="Insert Full Name" name="fullName">
                                     <input type="hidden" value="<?= $user[0]['userID'] ?>" name="userID">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nama Panggilan</label>
-                                    <input type="text" value="<?= $user[0]['nickName'] ?>" class="form-control" placeholder="Masukkan nama panggilan anda" name="nickName">
+                                    <label>Nick Name</label>
+                                    <input type="text" value="<?= $user[0]['nickName'] ?>" class="form-control" placeholder="Insert Nick Name" name="nickName">
                                 </div>
                                 <div class="form-group">
                                     <label>Email</label>
-                                    <input type="email" value="<?= $user[0]['email'] ?>" class="form-control" placeholder="Masukkan email anda" name="email">
+                                    <input type="email" value="<?= $user[0]['email'] ?>" class="form-control" placeholder="Insert Email" name="email">
                                 </div>
                                 <div class="form-group">
-                                    <label>Nomor Ponsel</label>
-                                    <input type="number" value="<?= $user[0]['phoneNumber'] ?>" class="form-control" placeholder="Masukkan Nomor ponsel anda" name="phoneNumber">
+                                    <label>Phone Number</label>
+                                    <input type="number" value="<?= $user[0]['phoneNumber'] ?>" class="form-control" placeholder="Insert Phone Number" name="phoneNumber">
                                 </div>
                                 <div class="form-group">
                                     <label>Role</label>
@@ -60,16 +60,16 @@
                                 </div>
                                 <small class="text-danger"><i>Abaikan Form password jika anda tidak ingin merubah password!</i></small>
                                 <div class="form-group">
-                                    <label>Kata Sandi</label>
-                                    <input type="password" class="form-control" placeholder="Masukkan Kata sandi" name="sandi">
+                                    <label>Old Password</label>
+                                    <input type="password" class="form-control" placeholder="Insert Old Password" name="password">
                                 </div>
                                 <div class="form-group">
-                                    <label>Kata Sandi Baru</label>
-                                    <input type="password" class="form-control" placeholder="Masukkan Konfirmasi Kata sandi" name="password">
+                                    <label>New Password</label>
+                                    <input type="password" class="form-control" placeholder="Insert New Password" name="newPassword">
                                 </div>
                                 <div class="form-group">
-                                    <label>Konfirmasi Kata Sandi</label>
-                                    <input type="password" class="form-control" placeholder="Masukkan Konfirmasi Kata sandi" name="cpassword">
+                                    <label>Confirm New Password</label>
+                                    <input type="password" class="form-control" placeholder="Confirm New Password" name="cNewPassword">
                                 </div>
                             </div>
                             <div class="card-footer">

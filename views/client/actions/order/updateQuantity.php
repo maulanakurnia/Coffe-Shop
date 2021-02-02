@@ -6,16 +6,17 @@
     $productID  = $_POST['productID'];
     $orderID    = $_SESSION["orderID"];
 
+
     $select     = fetchDataObject("SELECT * FROM order_details WHERE productID='$productID'");
     $products   = fetchDataObject("SELECT * FROM products WHERE productID='$productID'");
 
-        if($action === "tambah") {
+        if($action === "plus") {
             $stock          = (int) $products[0]->stock - 1;
         } else {
             $stock          = (int) $products[0]->stock + 1;
         }
     
     $updateStock    = dbQuery("UPDATE products SET stock = '$stock' WHERE productID = '$productID'");
-    $updateOrders   = dbQuery("UPDATE order_details SET quantity = '$quantity' WHERE orderID='$orderID'");
+    $updateOrders   = dbQuery("UPDATE order_details SET quantity = '$quantity' WHERE orderID='$orderID' AND productID='$productID'");
 
 ?>

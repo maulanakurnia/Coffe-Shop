@@ -3,17 +3,12 @@
     include("../layouts/head.php");
     include("../layouts/header.php");
 
-    $orderDetails   = fetchData("SELECT * FROM order_details a 
-                                 INNER JOIN products b 
-                                    ON a.productID=b.productID 
-                                 WHERE orderID = '$orderID'");
-
-    $totalPrice = 0;
-    foreach($orderDetails as $od) : 
-        $quantity = $od['quantity'];
-        $price  = $od['price'];
-        $totalPrice += $quantity*$price;
-    endforeach;
+    $orderDetails   = fetchData("SELECT * FROM orders a
+                                INNER JOIN order_details b
+                                    ON a.orderID=b.orderID
+                                 INNER JOIN products c 
+                                    ON b.productID=c.productID 
+                                 WHERE a.orderID = '$orderID' AND status='WAITING FOR PAYMENT'");
 ?>
 
 <section class="section-content mt-4">

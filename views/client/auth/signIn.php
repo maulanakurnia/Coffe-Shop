@@ -1,5 +1,5 @@
 <?php
-    $title = "Home";
+    $title = "SignIn";
     include("../layouts/head.php");
     include("../layouts/header.php");
 ?>
@@ -31,7 +31,7 @@
 
             </form>
             <hr>
-            <p class="text-center">Don't have an account yet? <a href="daftar.php">Sign Up!</a></p>
+            <p class="text-center">Don't have an account yet? <a href="signUp.php">Sign Up!</a></p>
         </article>
     </div>
     <br>

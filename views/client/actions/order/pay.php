@@ -1,4 +1,5 @@
 <?php
+session_start();
 include($_SERVER['DOCUMENT_ROOT']."/new-coffee-shop/app/db_connection.php");
 
 $orderID        = $_POST['orderID'];
@@ -15,6 +16,7 @@ $pay = dbQuery("UPDATE orders
                     WHERE orderID = '$orderID'
                   ");
 if($pay){
+    $_SESSION["orderID"] = NULL;
     header("location:../../order/Cart.php?msg=SUCCESS");
 }else{
     header("location:../../order/Cart.php?msg=FAILED");

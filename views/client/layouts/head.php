@@ -25,7 +25,7 @@
             if(parseInt(maxInput) > 0)
             {
                 var newQuantity = parseInt($(inputQuantityElement).val())+1;
-                var action = "tambah";
+                var action = "plus";
                 save_to_db(productID, newQuantity, action);
             }
         }
@@ -48,7 +48,7 @@
                 type : 'post',
                 success : function() {
                     $(inputQuantityElement).val(new_quantity);
-                    // location.reload(); 
+                    location.reload(); 
                 }
             });
         }

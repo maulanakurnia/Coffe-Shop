@@ -50,8 +50,8 @@
                                             Dashboard
                                         </a>
                                     <?php } else { ?>
-                                        <a class="dropdown-item" href="<?= $CLIENT_URL ?>profil.php">
-                                            Profil
+                                        <a class="dropdown-item" href="<?= $CLIENT_URL ?>profile.php">
+                                            Profile
                                         </a>
                                     <?php } ?>
                                         <a class="dropdown-item" href="<?= $CLIENT_URL ?>actions/auth/signOut.php">

@@ -4,7 +4,6 @@
     $pes = fetchData("SELECT * FROM orders a 
                     INNER JOIN user b
                         ON a.userID = b.userID");
-
 ?>
 
 <div class="content-wrapper" style="min-height: 1071.31px;">
